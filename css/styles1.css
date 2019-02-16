@@ -9,10 +9,10 @@
     --background-color: rgb(236, 236, 236);
     --text-color1: rgb(78, 78, 78);
     --text-color2: rgb(255, 255, 255);
-    --font-normal: 150%;
-    --font-big: 200%;
-    --font-bigger: 250%;
-    --font-biggest: 300%;
+    --font-normal: 100%;
+    --font-big: 150%;
+    --font-bigger: 190%;
+    --font-biggest: 220%;
 }
 
 body {
