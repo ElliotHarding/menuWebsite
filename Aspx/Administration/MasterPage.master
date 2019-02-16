@@ -46,7 +46,7 @@
         <form runat="server" class="master_form" >
 
             <!-- This navigation bar appears by default on every page (can be disabled for specifc pages) -->
-            <div runat="server" id="navigationbar" style="width: 100%; text-align:center;background-color: #333;">
+            <div runat="server" id="navigationbar" style="width: 100%; text-align:center;background-color: #333; border-radius:6px;">
                 
                 <asp:Button runat="server" ID="navBarButton1" Text="Home" OnClick="Home_Click" />
                 <asp:Button runat="server" ID="navBarButton2" Text="Eat" OnClick="Eat_Click" />

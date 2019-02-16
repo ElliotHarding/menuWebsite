@@ -5,7 +5,6 @@
         style="
             display:inline-block;
             width: 49%;
-            height: 9%;
             border: none;
             padding: 0;
             margin: 0;
@@ -21,7 +20,6 @@
         style="
             display:inline-block;
             width: 49%;
-            height: 9%;
             padding: 0;
             border: none;
             font-size: var(--font-big);
@@ -31,6 +29,4 @@
         OnClick="Chefs_Click"
         UseSubmitBehavior="false"
     />
-    <br />
-    <br />
 </div>

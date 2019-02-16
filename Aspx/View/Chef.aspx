@@ -28,7 +28,6 @@
     <br />
 
     <!-- MealList gets populated by code behind -->  
-    <p>List of meals that the chef owns:</p>
     <asp:PlaceHolder id="MealList" runat="server"/>     
 
 </asp:Content>

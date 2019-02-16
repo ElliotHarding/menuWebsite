@@ -9,16 +9,12 @@
 
     <CustomControls:EatNavigator runat="server" />
 
-    <p id="Errors" runat="server"></p>
-
     <p style="text-align:left;">Filter results</p>
     <input ID="SearchBox" type="text" placeholder="Search..." runat="server"/>
-    <br />
-    <br />
-    <br />
 
     <!-- MealList gets populated by code behind -->
     <p>Meals</p>
+    <p id="Errors" runat="server"></p>
     <asp:PlaceHolder id="MealList" runat="server"/> 
 
 </asp:Content>
