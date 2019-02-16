@@ -17,8 +17,8 @@
     
     <asp:Button CssClass="generic_asp_button" ID="LoginButton" runat="server" Text="Login" OnClick="tryLogin" />
     <br />
-    <a href="Forgot-Password.aspx" style="font-size:400%;">Lost your password?</a>
+    <a href="Forgot-Password.aspx">Lost your password?</a>
     <br />
-    <a href="Sign-Up.aspx" style="font-size:400%;">Don't have an account?</a>
+    <a href="Sign-Up.aspx" style="font-size:var(--font-bigger);">Don't have an account?</a>
     
 </asp:Content>
