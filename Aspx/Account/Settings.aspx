@@ -4,15 +4,12 @@
 
     <!-- PAGE PURPOSE: Display a users settings -->
     
-    <p class="generic_title"><b>Your Settings</b></p>
+    <h2>Your Settings</h2>
 
-    <form runat="server" class="generic_form" id="updateUserForm">  
-        
-        <p class="generic_error_message" id="Errors" runat="server"></p>
+    <p id="Errors" runat="server"></p>
 
-        <p>Settings will be displayed here</p>
-        <br />
-        <asp:button runat="server" onclick="LogOut" Text="Log out" />
-        <asp:Button id="submitButton" runat="server" Text="Submit" OnClick="OnSubmit"/>
-    </form>
+    <p>Settings will be displayed here</p>
+
+    <asp:button CssClass="generic_asp_button" runat="server" onclick="LogOut" Text="Log out" />
+    <asp:Button CssClass="generic_asp_button" id="submitButton" runat="server" Text="Submit" OnClick="OnSubmit"/>
 </asp:Content>

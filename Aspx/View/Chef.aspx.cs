@@ -26,7 +26,7 @@ public partial class Aspx_ViewChef : System.Web.UI.Page
         TableAttributeList chefToDisplay = getCurrentChef();
         if (chefToDisplay == null)
         {
-            ErrorDisplay.InnerText = "Error! No chef found to display.";
+            Errors.InnerText = "Error! No chef found to display.";
             return;
         }
 

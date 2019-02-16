@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 public partial class Aspx_LoginPage : System.Web.UI.Page
 {
@@ -9,10 +10,7 @@ public partial class Aspx_LoginPage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //Hide navigation bar options because on LoginPage
-        foreach (LiteralControl a in Master.FindControl("navigationbar").Controls)
-        {
-            a.Visible = false;
-        }
+        Master.FindControl("navigationbar").Visible = false;
     }
 
     //Called if user has correctly signed in

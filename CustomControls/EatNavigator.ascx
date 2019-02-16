@@ -3,15 +3,13 @@
 <div>
     <asp:Button 
         style="
-            width: 50%;
+            display:inline-block;
+            width: 49%;
             height: 9%;
             border: none;
             padding: 0;
             margin: 0;
-            top: 0;
-            left: 0;
-            position: absolute;
-            font-size: 300%;
+            font-size: var(--font-big);
         "
         runat="server"
         Text="Search Meals"
@@ -21,31 +19,18 @@
     
     <asp:Button     
         style="
-            width: 50%;
+            display:inline-block;
+            width: 49%;
             height: 9%;
             padding: 0;
             border: none;
-            margin: 0;
-            top: 0;
-            right: 0;
-            position: absolute;
-            font-size: 300%;
+            font-size: var(--font-big);
         "
         runat="server"
         Text="Search Chefs"
         OnClick="Chefs_Click"
         UseSubmitBehavior="false"
     />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <br />
     <br />
 </div>

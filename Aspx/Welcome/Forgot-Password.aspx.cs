@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 public partial class Aspx_ForgotPassword : System.Web.UI.Page
 {
@@ -8,10 +9,7 @@ public partial class Aspx_ForgotPassword : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //Hide navigation bar options because on LoginPage
-        foreach (LiteralControl a in Master.FindControl("navigationbar").Controls)
-        {
-            a.Visible = false;
-        }
+        Master.FindControl("navigationbar").Visible = false;
     }
 
     //Function called if reset email is sent correctly

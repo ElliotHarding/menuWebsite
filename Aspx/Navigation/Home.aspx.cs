@@ -17,4 +17,19 @@ public partial class Aspx_HomePage : System.Web.UI.Page
             Response.Redirect("../Welcome/login.aspx");
         }
     }
+
+    protected void Account_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Navigation/Account.aspx");
+    }
+
+    protected void Cook_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Cooking/Add-Meal.aspx");
+    }
+
+    protected void Eat_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Eat/Search-By-Meals.aspx");
+    }
 }

@@ -37,14 +37,16 @@ public partial class Aspx_EditMeal : System.Web.UI.Page
         }
 
         //populate HTML controls with meal data
-        foreach (TableAttribute attribute in mealShown.GetTableAttributes())
-        {
-            HtmlInputText attributeControl = (HtmlInputText)updateMealForm.FindControl(attribute.id);
-            if (attributeControl != null)
-            {
-                attributeControl.Value = attribute.value;
-            }
-        }
+        //foreach (TableAttribute attribute in mealShown.GetTableAttributes())
+        //{
+        //    HtmlInputText attributeControl = (HtmlInputText)updateMealForm.FindControl(attribute.id);
+        //    if (attributeControl != null)
+        //    {
+        //        attributeControl.Value = attribute.value;
+        //    }
+        //}
+        //todo
+
     }
 
     //Function called when 'edit meal' button is clicked

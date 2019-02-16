@@ -4,25 +4,21 @@
 
 <asp:Content ContentPlaceHolderID="Main_Content_Placeholder" Runat="Server">
 
-    <form class="generic_form" runat="server">
+    <!-- Script manager to handle populating our custom controls into lists -->
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
 
-        <!-- Script manager to handle populating our custom controls into lists -->
-        <asp:ScriptManager runat="server"></asp:ScriptManager>
+    <CustomControls:EatNavigator runat="server" />
 
-        <CustomControls:EatNavigator runat="server" />
+    <p id="Errors" runat="server"></p>
 
-        <p class="generic_form_p generic_error_message" id="Errors" runat="server"></p>
+    <p style="text-align:left;">Filter results</p>
+    <input ID="SearchBox" type="text" placeholder="Search..." runat="server"/>
+    <br />
+    <br />
+    <br />
 
-        <p style="text-align:left;">Filter results</p>
-        <input ID="SearchBox" type="text" placeholder="Search..." runat="server"/>
-        <br />
-        <br />
-        <br />
-
-        <!-- MealList gets populated by code behind -->
-        <p>Meals</p>
-        <asp:PlaceHolder id="MealList" runat="server"/> 
-
-    </form>
+    <!-- MealList gets populated by code behind -->
+    <p>Meals</p>
+    <asp:PlaceHolder id="MealList" runat="server"/> 
 
 </asp:Content>

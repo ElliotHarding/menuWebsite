@@ -5,23 +5,60 @@
     <head runat="server">
         <meta charset="UTF-8"/>
         <link rel="stylesheet" type="text/css" href="~/css/styles1.css"/>
-         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+            <style>
+                #navBarButton1{
+                    border:0;
+                    width: 30%;
+                    color:white;                    
+                    text-align: center;
+                    display: inline-block;
+                    text-decoration: none;    
+                    background-color: #333;
+                    font-size: var(--font-biggest);
+                }
+
+                #navBarButton2{
+                    border:0;
+                    width:30%;
+                    color:white;                    
+                    text-align: center;                    
+                    display: inline-block;
+                    text-decoration: none;  
+                    background-color: #333;
+                    font-size: var(--font-biggest);
+                }
+
+                #navBarButton3{
+                    border:0;
+                    width: 30%;
+                    color:white;                    
+                    text-align: center;
+                    display: inline-block;
+                    text-decoration: none;   
+                    background-color: #333;
+                    font-size: var(--font-biggest);
+                }
+            </style>
     </head>
 
     <body>
-       
-        <!-- This navigation bar appears by default on every page (can be disabled for specifc pages) -->
-        <div class="navigationbar" runat="server" id="navigationbar">
-            <a href="../Navigation/Home.aspx">Home</a>
-            <a href="../Eat/Search-By-Meals.aspx">| Eat |</a>
-            <a href="../Navigation/Account.aspx">Account</a>
-        </div>
+        <form runat="server" class="master_form" >
 
-        <div class="main-content">
+            <!-- This navigation bar appears by default on every page (can be disabled for specifc pages) -->
+            <div runat="server" id="navigationbar" style="width: 100%; text-align:center;background-color: #333;">
+                
+                <asp:Button runat="server" ID="navBarButton1" Text="Home" OnClick="Home_Click" />
+                <asp:Button runat="server" ID="navBarButton2" Text="Eat" OnClick="Eat_Click" />
+                <asp:Button runat="server" ID="navBarButton3" Text="Account" OnClick="Account_Click" />
+            
+            </div>              
+
             <asp:ContentPlaceHolder id="Main_Content_Placeholder" runat="server">
                 <%--Page specific content goes here--%>
             </asp:ContentPlaceHolder>
-        </div>
+
+        </form>
     </body>
 
 </html>

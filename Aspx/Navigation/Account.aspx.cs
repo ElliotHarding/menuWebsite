@@ -16,4 +16,19 @@ public partial class Aspx_UserAccount : System.Web.UI.Page
             Response.Redirect("../Welcome/login.aspx");
         }
     }
+
+    protected void Orders_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Account/Orders.aspx");
+    }
+
+    protected void Meals_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Account/Meals.aspx");
+    }
+
+    protected void Settings_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Account/Settings.aspx");
+    }
 }

@@ -2,12 +2,9 @@
 
 <asp:Content ContentPlaceHolderID="Main_Content_Placeholder" Runat="Server">
 
-    <%-- Height for the navigation boxes --%>
-    <style>.height{height : 32%;}</style>
-
     <div class="generic_navigation_box">
-        <div class="generic_navigation_box_option height" onclick="location.href='../Eat/Search-By-Meals.aspx';"><a>Eat</a></div>
-        <div class="generic_navigation_box_option height" onclick="location.href='../Cooking/Add-Meal.aspx';"><a>Cook</a></div>
-        <div class="generic_navigation_box_option height" onclick="location.href='../Navigation/Account.aspx';"><a>My Account</a></div> 
+        <asp:Button runat="server" class="generic_navigation_box_option" Text="Eat" onclick="Eat_Click"/>
+        <asp:Button runat="server" class="generic_navigation_box_option" Text="Cook" onclick="Cook_Click" />
+        <asp:Button runat="server" class="generic_navigation_box_option" Text="My Account" OnClick="Account_Click" /> 
     </div>
 </asp:Content>

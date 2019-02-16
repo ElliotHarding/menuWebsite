@@ -30,7 +30,7 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
         string portions = Portions.Value;
         if (portions == null || !backEnd._inputValiddation.onlyNumbers(portions))
         {
-            ErrorDisplay.InnerText = "Can't order meal. Unrecognized number of meals";
+            Errors.InnerText = "Can't order meal. Unrecognized number of meals";
             return;
         }
 
@@ -38,20 +38,20 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
         TableAttributeList mealShown = getCurrentMeal();
         if (mealShown == null)
         {
-            ErrorDisplay.InnerText = "Error! No meal to display.";
+            Errors.InnerText = "Error! No meal to display.";
             return;
         }
 
         string userId = Session["currentUserID"].ToString();
         if (userId == null)
         {
-            ErrorDisplay.InnerText = "Can't order meal! Not signed in!";
+            Errors.InnerText = "Can't order meal! Not signed in!";
             return;
         }
 
         if (mealShown.getAttribute("owner_user_id") == userId)
         {
-            ErrorDisplay.InnerText = "Can't order meal. It belongs to you!";
+            Errors.InnerText = "Can't order meal. It belongs to you!";
             return;
         }
 
@@ -65,7 +65,7 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
         //add to basket
         if (!newOrder.insertIntoDatabase())
         {
-            ErrorDisplay.InnerText = "Failed to add to basket! Database error.";
+            Errors.InnerText = "Failed to add to basket! Database error.";
             return;
         }
 
@@ -74,7 +74,7 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
             Response.Redirect(Session["previousPage"].ToString());
         }
 
-        ErrorDisplay.InnerText = "Order saved to basket. But something went wrong...";
+        Errors.InnerText = "Order saved to basket. But something went wrong...";
     }
 
     //Populate aspx with currentMeal
@@ -84,7 +84,7 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
         TableAttributeList mealShown = getCurrentMeal();
         if (mealShown == null)
         {
-            ErrorDisplay.InnerText = "Error! No meal to display.";
+            Errors.InnerText = "Error! No meal to display.";
             return;
         }
 
