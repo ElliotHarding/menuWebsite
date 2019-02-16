@@ -9,7 +9,7 @@
             <style>
                 #navBarButton1{
                     border:0;
-                    width: 30%;
+                    width: 32%;
                     color:white;                    
                     text-align: center;
                     display: inline-block;
@@ -20,7 +20,7 @@
 
                 #navBarButton2{
                     border:0;
-                    width:30%;
+                    width:32%;
                     color:white;                    
                     text-align: center;                    
                     display: inline-block;
@@ -31,7 +31,7 @@
 
                 #navBarButton3{
                     border:0;
-                    width: 30%;
+                    width: 32%;
                     color:white;                    
                     text-align: center;
                     display: inline-block;
