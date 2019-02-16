@@ -1,0 +1,416 @@
+/*-----------------------------------------------------------------
+    Global aspx page CSS
+    
+    Used: Everywhere
+*/
+:root {
+    --main-color: #FF494F;
+    --second-color: whitesmoke;
+    --background-color: rgb(236, 236, 236);
+    --text-color1: rgb(78, 78, 78);
+    --text-color2: rgb(255, 255, 255);
+    --screen-width: 340px;
+    --screen-height: 600px;
+	--normal-font: 300%;
+	--big-font: 400%;
+	--large-font: 500%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+.main-content {
+    border-radius: 10px;
+    background: var(--second-color);
+    color: var(--text-color1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:100%;
+    height:90%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 15px 15px;
+    border: 1px solid rgb(177, 177, 177);
+}
+
+.center_text {
+    text-align: center;
+}
+
+.generic_big_button {
+/*
+Currently there are no buttons
+that are not within a form,
+so this might okay to delete...
+*/
+}
+
+.generic_small_button {
+ /*
+Currently there are no buttons
+that are not within a form,
+so this might okay to delete...
+*/
+}
+
+.generic_title { /*Used for nearly all titles atm*/
+    text-align: center;
+    font-size: var(--big-font);
+}
+
+.generic_error_message{
+    color:red;
+}
+
+.generic_success_message {
+    color: green;
+}
+
+.generic_text_a {
+/*
+Currently there are no <a>'s
+that are not within a form,
+so this might okay to delete...
+*/
+}
+
+.generic_text_input {
+/*
+Currently there are no text
+inputs that are not within a 
+form, so this might okay to
+delete...
+*/
+}
+/*
+    End global css
+----------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*----------------------------------------------------------------
+    CSS for generic forms
+
+    Used: In most places where forms are used:
+        - Account/Settings.aspx
+        - Welcome/Sign-Up.aspx
+        - Welcome/Forgot-Password.aspx
+        - Cooking/Add-Meal.aspx
+
+    Exception: Welcome/Login.aspx has it's own form css definitions
+*/
+.generic_form {
+    overflow-y: auto;
+    max-height: 90%;
+    text-align:center;
+}
+
+.generic_form input {
+    width: 100%;
+
+    color: var(--text-color1);
+    font-size: var(--normal-font);
+}
+
+.generic_form input[type="text"] {
+    border: none;
+    border-bottom: 1px solid var(--text-color1);
+    background: transparent;
+    outline: none;
+    color: var(--text-color1);
+    font-size: var(--normal-font);
+    margin-bottom:5%;
+}
+
+.generic_form a {
+    margin-top:5%;
+    text-decoration: none;
+    font-size: var(--normal-font);
+    text-align:center;
+    color: var(--text-color1);
+}
+
+.generic_form p {
+    margin-top:5%;
+    text-decoration: none;
+    font-size: var(--big-font);
+    text-align:center;
+    color: var(--text-color1);
+}
+.generic_form_p {
+    margin-top:5%;
+    text-decoration: none;
+    font-size: var(--big-font);
+    text-align:center;
+    color: var(--text-color1);
+}
+
+.generic_form button {
+    border: none;
+    outline: none;
+    background: var(--main-color);
+    color: #fff;
+    font-size: var(--big-font);
+    border-radius: 10px;
+}
+.generic_form_asp_button {
+    border: none;
+    outline: none;
+    background: var(--main-color);
+    color: #fff;
+    font-size: var(--big-font);
+    border-radius: 10px;
+}
+/*
+    End css for generic forms
+----------------------------------------------------------------*/
+/*----------------------------------------------------------------
+    CSS for generic navigation pages
+
+    Used: For pages where the primary function is to navigate users between other pages
+        - HomePage.aspx
+        - Account.aspx
+*/
+.generic_navigation_box {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.generic_navigation_box_option {
+
+    /*Height should be changed in aspx code depending
+        on number of nav boxes*/
+    height: 50%;
+
+    flex-grow: 1;
+    display: table;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    justify-content: center;
+    background: var(--main-color);
+    color: var(--text-color2);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.generic_navigation_box_option a {
+     display:table-cell;
+     vertical-align: middle;
+     text-align: center;
+     font-size: var(--large-font);
+}
+/*
+    End css for generic navigation pages
+----------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------------
+    CSS for query boxes
+
+    Used: Where users can modify the way in which results are displayed
+        - Eat/Food.aspx
+
+    Notes: May add to Account/Meals.aspx & Account/Orders.aspx
+*/
+.query-box{
+    border-radius: 5px;
+    width: 25%;
+    background: var(--second-color);
+    color: var(--text-color1);
+    top: 50%;
+    left: 22%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border: 1px solid rgb(177, 177, 177);
+}
+
+.query-box .contents input{
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 5px;
+    width:70%;
+    padding-left: 10px;
+}
+
+.query-box .contents input[type="range"]{
+    position: relative;
+    top:9px;
+    width:50%;
+   
+}
+
+.query-box .contents p{
+    text-align: center;
+}
+
+.query-box .contents{
+    margin:10px;
+}
+/*
+    End css for query boxes
+----------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------------
+    CSS for table box
+
+    Used: Where results are displayed in a table box format
+        - Eat/Food.aspx
+
+    Notes: May add to UserMeals.aspx & UserOrders.aspx 
+*/
+.table-box{
+    border-radius: 5px;
+    width: 50%;
+    background: var(--second-color);
+    color: var(--text-color1);
+    top: 50%;
+    left: 65%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border: 1px solid rgb(177, 177, 177);
+}
+
+.table-box .row{
+    border-radius: 2px;
+    padding: 3%;
+    margin: 20px;
+    height: 20px;
+    background-color: var(--main-color);
+}
+
+.table-box .row .image{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    left: -20px;
+}
+
+.table-box .row .image img{
+   height:100%;
+   width:60px;
+   object-fit: cover;
+}
+
+.table-box .row .name {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top: -50px;
+}
+
+.table-box .row .name a{
+    
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+    color: var(--second-color);   
+}
+.table-box .row .name a:hover{
+    text-decoration: underline;
+}
+
+.table-box .row .item{
+    position: relative;
+    top: -60px;
+    left: 20px;
+    text-align: right;
+    color: var(--text-color2)
+}
+
+.table-box  .row .item p{
+    display: inline;
+}
+/*
+    End css for table box
+----------------------------------------------------------------*/
+
+
+
+
+/*-----------------------------------------------------------------
+    Navigation bar CSS
+    
+    Used: For most pages (Currently every page that inherits from the master page)
+*/
+.navigationbar {
+    overflow: hidden;
+    background-color: #333;
+    top: 0px;
+    left: 50%;
+    position: absolute;
+    height:12%;
+    transform: translate(-50%,0%);
+    width: 100%;
+    text-align:center;
+}
+
+.navigationbar a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-decoration: none;
+    height: 50px;
+    font-size: 500%;
+}
+
+.navigationbar a:hover {
+    background: #ddd;
+}
+
+/*
+    End of navigation bar css
+----------------------------------------------------------------*/
+
+
+/*==== Eat navigator shit
+    will organise later...
+*/
+.EatNavigatorButtonA {
+    width: 50%;
+    height: 9%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 100%;
+}
+.EatNavigatorButtonB {
+    width: 50%;
+    height: 9%;
+    padding: 0;
+    border: none;
+    margin: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+    font-size: 50%;
+}
+/*end of eat navigator shit*/

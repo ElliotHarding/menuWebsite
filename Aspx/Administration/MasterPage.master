@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Aspx_MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+    <head runat="server">
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="~/css/styles1.css"/>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+
+    <body>
+       
+        <!-- This navigation bar appears by default on every page (can be disabled for specifc pages) -->
+        <div class="navigationbar" runat="server" id="navigationbar">
+            <a href="../Navigation/Home.aspx">Home</a>
+            <a href="../Eat/Search-By-Meals.aspx">| Eat |</a>
+            <a href="../Navigation/Account.aspx">Account</a>
+        </div>
+
+        <div class="main-content">
+            <asp:ContentPlaceHolder id="Main_Content_Placeholder" runat="server">
+                <%--Page specific content goes here--%>
+            </asp:ContentPlaceHolder>
+        </div>
+    </body>
+
+</html>
