@@ -141,36 +141,18 @@ body {
         - HomePage.aspx
         - Account.aspx
 */
-.generic_navigation_box {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
 .generic_navigation_box_option {
 
-    /*Height should be changed in aspx code depending
-        on number of nav boxes*/
-    height: 50%;
+     /*Positions should be configured in local css*/
+    position:absolute;
 
-    flex-grow: 1;
-    display: table;
-    width: 100%;
+    transform: translate(-50%,0%);
     border: none;
     outline: none;
     border-radius: 10px;
     justify-content: center;
     background: var(--main-color);
     color: var(--text-color2);
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.generic_navigation_box_option a {
-     display:table-cell;
-     vertical-align: middle;
-     text-align: center;
-     font-size: var(--large-font);
 }
 /*
     End css for generic navigation pages
