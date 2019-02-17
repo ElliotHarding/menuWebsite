@@ -16,6 +16,7 @@ public partial class Aspx_EditMeal : System.Web.UI.Page
         }
         catch (Exception ee)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(ee);
             Response.Redirect("../Welcome/login.aspx");
         }
         if (!IsPostBack)
@@ -49,6 +50,7 @@ public partial class Aspx_EditMeal : System.Web.UI.Page
         }
         catch (Exception e)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             Errors.InnerText = "Can't configure meal! Database error";
             return;
         }
@@ -109,7 +111,7 @@ public partial class Aspx_EditMeal : System.Web.UI.Page
     //Returns the meal currently being shown (meal in context)
     Meal getCurrentMeal()
     {
-        string id = Session["selectedMeal"].ToString();
+        string id = backEnd.GetUserSession(Session["currentUserID"].ToString(), "MEAL_IN_CONTEXT");
 
         if(id == null)
         {

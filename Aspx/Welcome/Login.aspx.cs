@@ -37,7 +37,7 @@ public partial class Aspx_LoginPage : System.Web.UI.Page
                 string user_id = getUserID(username, password);
                 if(user_id != null)
                 {
-                    if (backEnd._storage.loginUser(user_id))
+                    if (backEnd.SetUserSession(user_id, "LOGGED_IN", "true"))
                     {
                         signedIn(user_id);
                     }
@@ -91,7 +91,7 @@ public partial class Aspx_LoginPage : System.Web.UI.Page
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             return null;
         }
     }

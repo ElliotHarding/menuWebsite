@@ -17,6 +17,7 @@ public partial class Aspx_Administration : System.Web.UI.Page
         }
         catch (Exception ee)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(ee);
             Response.Redirect("../Welcome/login.aspx");
         }
 

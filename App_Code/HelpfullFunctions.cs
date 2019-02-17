@@ -61,6 +61,7 @@ public class HelpfullFunctions
         }
         catch(Exception e)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             return false;
         }
       

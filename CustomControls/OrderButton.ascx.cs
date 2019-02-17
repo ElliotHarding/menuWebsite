@@ -39,7 +39,7 @@ public partial class Aspx_OrderButton : System.Web.UI.UserControl
     {
         if (shownOrder != null)
         {
-            Session["selectedOrder"] = shownOrder.getAttribute("id");
+            new BackEnd().SetUserSession(Session["currentUserID"].ToString(), "ORDER_IN_CONTEXT", shownOrder.getAttribute("id"));
             Response.Redirect("../View/Order.aspx");
         }
     }

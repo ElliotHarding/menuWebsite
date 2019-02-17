@@ -35,8 +35,8 @@ public partial class Aspx_ChefButton : System.Web.UI.UserControl
     protected void viewButton_Click(object sender, EventArgs e)
     {
         if (shownChef != null)
-        { 
-            Session["selectedChef"] = shownChef.getAttribute("id");
+        {
+            new BackEnd().SetUserSession(Session["CurrentUserID"].ToString(), "USER_IN_CONTEXT", shownChef.getAttribute("id"));
             Response.Redirect("../View/Chef.aspx");
         }
     }

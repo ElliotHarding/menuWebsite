@@ -75,7 +75,7 @@ public partial class Aspx_SignUp : System.Web.UI.Page
             return;
         }
 
-        if (!backEnd._storage.loginUser(input_id))
+        if (!backEnd.SetUserSession(input_id, "LOGGED_IN", "true"))
         {
             Errors.InnerText = "Database error! Code #2211";
             return;

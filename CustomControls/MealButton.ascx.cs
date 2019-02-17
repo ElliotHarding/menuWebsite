@@ -36,7 +36,7 @@ public partial class Aspx_MealButton : System.Web.UI.UserControl
     {
         if (shownMeal != null)
         {
-            Session["selectedMeal"] = shownMeal.getAttribute("id");
+            new BackEnd().SetUserSession(Session["currentUserID"].ToString(), "MEAL_IN_CONTEXT", shownMeal.getAttribute("id"));
 
             if (Session["currentUserID"].ToString() == shownMeal.getAttribute("owner_user_id"))
             {
@@ -44,7 +44,7 @@ public partial class Aspx_MealButton : System.Web.UI.UserControl
             }
             else
             {
-                Session["previousPage"] = Request.CurrentExecutionFilePath;
+                new BackEnd().SetUserSession(Session["currentUserID"].ToString(), "PREVIOUS_PAGE", Request.CurrentExecutionFilePath);
                 Response.Redirect("../View/Meal.aspx");
             }
         }

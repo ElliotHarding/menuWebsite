@@ -20,6 +20,7 @@ public partial class Aspx_ViewOrder : System.Web.UI.Page
         }
         catch (Exception ee)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(ee);
             Response.Redirect("../Welcome/login.aspx");
         }
 
@@ -46,11 +47,11 @@ public partial class Aspx_ViewOrder : System.Web.UI.Page
         string id;
         try
         {
-            id = Session["selectedOrder"].ToString();
+            id = backEnd.GetUserSession(Session["currentUserID"].ToString(), "ORDER_IN_CONTEXT");
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             return null;
         }
 

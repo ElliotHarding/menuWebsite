@@ -33,19 +33,10 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
         }
 
         return Attributes;
-    }
-
-    public bool isUserAdmin(string currentUserID)
-    {
-        if (currentUserID == null || currentUserID == "")
-            return false;
-
-        User user = getUserById(currentUserID);
-        return (user.getAttribute("is_admin") == "true");
     }
 
     public List<Meal> getListOfMeals(string selectCommand = "NO COMMAND RETURNS ALL ELEMENTS")
@@ -74,7 +65,7 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
         }
 
         return Attributes;
@@ -106,7 +97,7 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
         }
 
         return Attributes;
@@ -134,7 +125,7 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
         }
 
         return dt;
@@ -157,11 +148,36 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             return false;
         }
 
         return true;
+    }
+
+    public string getString(string selectCommand)
+    {
+        string returnString = null;
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(m_c_connectionString))
+            {
+                conn.Open();
+
+                using (SqlDataReader reader = new SqlCommand(selectCommand, conn).ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        returnString = reader.ToString();
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
+        }
+        return returnString;
     }
 
     public Order getOrderById(string id)
@@ -174,7 +190,7 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             return null;
         }
     }
@@ -189,7 +205,7 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             return null;
         }
     }
@@ -204,21 +220,9 @@ public class Storage
         }
         catch (Exception e)
         {
-            DebugLogger.put_a_breakpoint_inside_this_function();
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             return null;
         }
-    }
-
-    public bool loginUser(string userID)
-    {
-        string command = "UPDATE [User] SET logged_in = 'true' WHERE id ='" + userID + "';";
-        return RunCommand(command);
-    }
-
-    public bool logoutUser(string userID)
-    {
-        string command = "UPDATE [User] SET logged_in = 'false' WHERE id ='" + userID + "';";
-        return RunCommand(command);
     }
 
     public bool doesEmailExist(string email)
@@ -243,6 +247,15 @@ public class Storage
             return true;
         }
         return false;
+    }
+
+    public bool isUserAdmin(string currentUserID)
+    {
+        if (currentUserID == null || currentUserID == "")
+            return false;
+
+        User user = getUserById(currentUserID);
+        return (user.getAttribute("is_admin") == "true");
     }
 
     public string generateUniqueUserID()

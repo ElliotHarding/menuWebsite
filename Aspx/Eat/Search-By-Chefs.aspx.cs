@@ -20,6 +20,7 @@ public partial class Aspx_Eat_Search_By_Chefs : System.Web.UI.Page
         }
         catch (Exception ee)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(ee);
             Response.Redirect("../Welcome/login.aspx");
         }
 

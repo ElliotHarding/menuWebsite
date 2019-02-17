@@ -15,6 +15,7 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
         }
         catch (Exception ee)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(ee);
             Response.Redirect("../Welcome/login.aspx");
         }
 
@@ -69,9 +70,10 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
             return;
         }
 
-        if(Session["previousPage"].ToString() != null)
+        string previousPage = backEnd.GetUserSession(Session["currentUserID"].ToString(), "PREVIOUS_PAGE");
+        if (previousPage != null)
         {
-            Response.Redirect(Session["previousPage"].ToString());
+            Response.Redirect(previousPage);
         }
 
         Errors.InnerText = "Order saved to basket. But something went wrong...";
@@ -105,6 +107,7 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
         }
         catch (Exception e)
         {
+            DebugLogger.put_a_breakpoint_inside_this_function(e);
             Errors.InnerText = "Can't configure meal! Database error";
             return;
         }
@@ -115,7 +118,7 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
     //Returns the meal currently being shown (meal in context)
     private TableAttributeList getCurrentMeal()
     {
-        string mealid = Session["selectedMeal"].ToString();
+        string mealid = backEnd.GetUserSession(Session["currentUserID"].ToString(), "MEAL_IN_CONTEXT");
         
         if(mealid == null)
         {
