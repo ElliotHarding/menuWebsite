@@ -16,4 +16,14 @@ public partial class Aspx_AfterMealAdditionPage : System.Web.UI.Page
             Response.Redirect("../Welcome/login.aspx");
         }
     }
+
+    protected void Another_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Add-Meal.aspx");
+    }
+
+    protected void Home_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Navigation/Home.aspx");
+    }
 }

@@ -105,12 +105,8 @@ better off looking in Storage Class*/
         }
         else
         {
-            string errorReasons = "";
-            foreach (string error in failReasons)
-            {
-                errorReasons += error + "\n";
-            }
-            return errorReasons;
+            //Return first error.... will probably change this later
+            return failReasons[0];
         }
     }
 
@@ -137,25 +133,25 @@ better off looking in Storage Class*/
         string collection_time = meal.getAttribute("collection_time");
         string number_of_portions_avaliable = meal.getAttribute("number_of_portions_avaliable");
 
-        if (stringIsBoolean(meal.getAttribute("is_halal")))
+        if (!stringIsBoolean(meal.getAttribute("is_halal")))
         {
-            failReasons.Add("Make sure is_halal is 'yes' or 'no'");
+            failReasons.Add("Make sure 'is halal' is 'yes' or 'no'");
         }
-        if (stringIsBoolean(meal.getAttribute("is_vegan")))
+        if (!stringIsBoolean(meal.getAttribute("is_vegan")))
         {
-            failReasons.Add("Make sure is_vegan is 'yes' or 'no'");
+            failReasons.Add("Make sure 'is vegan' is 'yes' or 'no'");
         }
-        if (stringIsBoolean(meal.getAttribute("is_vegiterian")))
+        if (!stringIsBoolean(meal.getAttribute("is_vegiterian")))
         {
-            failReasons.Add("Make sure is_vegiterian is 'yes' or 'no'");
+            failReasons.Add("Make sure 'is vegiterian' is 'yes' or 'no'");
         }
-        if (stringIsBoolean(meal.getAttribute("contains_milk")))
+        if (!stringIsBoolean(meal.getAttribute("contains_milk")))
         {
-            failReasons.Add("Make sure contains_milk is 'yes' or 'no'");
+            failReasons.Add("Make sure 'contains milk' is 'yes' or 'no'");
         }
         if (!stringIsBoolean(meal.getAttribute("contains_gluten")))
         {
-            failReasons.Add("Make sure contains_gluten is 'yes' or 'no'");
+            failReasons.Add("Make sure 'contains gluten' is 'yes' or 'no'");
         }
 
 
@@ -198,12 +194,14 @@ better off looking in Storage Class*/
         }
         else
         {
-            string errorReasons = "";
-            foreach (string error in failReasons)
-            {
-                errorReasons += error + "\n";
-            }
-            return errorReasons;
+            //Return firt fail for now, will probs change later
+            return failReasons[0];
+            //string errorReasons = "";
+            //foreach (string error in failReasons)
+            //{
+            //    errorReasons += error + "\n";
+            //}
+            //return errorReasons;
         }
     }
 

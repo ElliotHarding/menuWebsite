@@ -18,7 +18,14 @@ public class TableAttributeList
     {
         foreach (TableAttribute attribute in m_tableAttributes)
         {
-            attribute.value = reader[attribute.id].ToString();
+            try
+            {
+                attribute.value = reader[attribute.id].ToString();
+            }
+            catch(Exception e)
+            {
+                DebugLogger.put_a_breakpoint_inside_this_function(e);
+            }
         }
     }
 

@@ -31,13 +31,13 @@ public partial class Aspx_Administration : System.Web.UI.Page
 
     private void populateGrids()
     {
-        UsersGridView.DataSource = backEnd._storage.RunCommand("SELECT * FROM [USER]");
+        UsersGridView.DataSource = backEnd._storage.runSelectCommand("SELECT * FROM [USER]");
         UsersGridView.DataBind();
 
-        MealsGridView.DataSource = backEnd._storage.RunCommand("SELECT * FROM [Meal]");
+        MealsGridView.DataSource = backEnd._storage.runSelectCommand("SELECT * FROM [Meal]");
         MealsGridView.DataBind();
 
-        ActiveOrdersGridView.DataSource = backEnd._storage.RunCommand("SELECT * FROM [Order]");
+        ActiveOrdersGridView.DataSource = backEnd._storage.runSelectCommand("SELECT * FROM [Order]");
         ActiveOrdersGridView.DataBind();
     }
 }

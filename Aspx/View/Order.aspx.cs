@@ -35,15 +35,9 @@ public partial class Aspx_ViewOrder : System.Web.UI.Page
             return;
         }
 
-        //populate HTML controls with order data
-        //foreach (TableAttribute attribute in orderShown.GetTableAttributes())
-        //{
-        //    //todo want do we wanna fill?
-        //}
-
-        attribute1.Value = orderShown.getAttribute("name");
-        attribute2.Value = orderShown.getAttribute("num_portions_ordered");
-        attribute3.Value = orderShown.getAttribute("id");
+        num_portions_ordered.Text = orderShown.getAttribute("num_portions_ordered");
+        meal_name.Text = backEnd._storage.getMealById(orderShown.getAttribute("meal_id")).getAttribute("meal_name");
+        active.Text = orderShown.getAttribute("active");
     }
 
     //Returns the meal currently being shown (meal in context)

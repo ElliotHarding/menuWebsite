@@ -88,19 +88,26 @@ public partial class Aspx_ViewMeal : System.Web.UI.Page
             return;
         }
 
-        //populate HTML controls with meal data
-        //foreach (TableAttribute attribute in mealShown.GetTableAttributes())
-        //{
-        //    HtmlInputText attributeControl = (HtmlInputText)viewMealForm.FindControl(attribute.id);
-        //    if (attributeControl != null)
-        //    {
-        //        attributeControl.Value = attribute.value;
-        //    }
-        //}
-
-        attribute1.Value = mealShown.getAttribute("meal_name");
-        attribute2.Value = mealShown.getAttribute("contains_gluten");
-        attribute3.Value = mealShown.getAttribute("estimated_calories");
+        try
+        {
+            meal_name.InnerText = mealShown.getAttribute("meal_name");
+            is_halal.Text = mealShown.getAttribute("is_halal");
+            is_vegan.Text = mealShown.getAttribute("is_vegan");
+            is_vegiterian.Text = mealShown.getAttribute("is_vegiterian");
+            contains_gluten.Text = mealShown.getAttribute("contains_gluten");
+            contains_milk.Text = mealShown.getAttribute("contains_milk");
+            ingredients_list.Text = mealShown.getAttribute("ingredients_list");
+            estimated_calories.Text = mealShown.getAttribute("estimated_calories");
+            price.Text = mealShown.getAttribute("price");
+            collection_time.Text = mealShown.getAttribute("collection_time");
+            number_of_portions_avaliable.Text = mealShown.getAttribute("number_of_portions_avaliable");
+            //todo picture_id.Value
+        }
+        catch (Exception e)
+        {
+            Errors.InnerText = "Can't configure meal! Database error";
+            return;
+        }
 
         MealImage.ImageUrl = Globals.ImagesStorage + mealShown.getAttribute("picture_id") + ".jpg";
     }

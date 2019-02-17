@@ -8,10 +8,7 @@
 
     <a>Meal Name:</a>
     <input id="meal_name" type="text" runat="server"/>
-    
-    <a>**Picture ID... todo...**</a>
-    <input id="picture_id" type="text" runat="server"/>
-    
+        
     <a>Number of portions</a>
     <input id="number_of_portions_avaliable" type="text" runat="server"/>
 
@@ -42,6 +39,8 @@
     <a>What time will the meal be ready for collection?</a>
     <input id="collection_time" type="text" runat="server"/>
     
+    <a>**Picture ID... todo...**</a>
+    <input id="picture_id" type="text" runat="server"/>
     <br />
     <br />
     <asp:Button CssClass="generic_asp_button" id="submitButton" runat="server" Text="Submit" OnClick="addMeal" />

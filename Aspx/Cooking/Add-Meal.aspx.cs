@@ -28,17 +28,28 @@ public partial class Aspx_AddMealPage : System.Web.UI.Page
     protected void addMeal(object sender, EventArgs e)
     {
         Meal newMeal = new Meal();
-        foreach (TableAttribute attribute in newMeal.GetTableAttributes())
-        {
-            if(!newMeal.setAttributeValue(attribute.id, Request.Form["ctl00$Main_Content_Placeholder$" + attribute.id]))
-            {
-                Errors.InnerText = "Back end error! Code #6654";
-                return;
-            }
-        }
 
         //Code generated meal attributes go here
-        newMeal.setAttributeValue("owner_user_id", Session["currentUserID"].ToString());
+        if (!newMeal.setAttributeValue("id", backEnd._storage.generateUniqueMealID()) ||
+            !newMeal.setAttributeValue("owner_user_id", Session["currentUserID"].ToString()) ||
+            !newMeal.setAttributeValue("meal_name", meal_name.Value) ||
+            !newMeal.setAttributeValue("is_halal", is_halal.Value) ||
+            !newMeal.setAttributeValue("is_vegan", is_vegan.Value) ||
+            !newMeal.setAttributeValue("is_vegiterian", is_vegiterian.Value) || 
+            !newMeal.setAttributeValue("contains_gluten", contains_gluten.Value) ||
+            !newMeal.setAttributeValue("contains_milk", contains_milk.Value) ||
+            !newMeal.setAttributeValue("ingredients_list", ingredients_list.Value) ||
+            !newMeal.setAttributeValue("estimated_calories", estimated_calories.Value) ||
+            !newMeal.setAttributeValue("picture_id", picture_id.Value) ||
+            !newMeal.setAttributeValue("price", price.Value) ||
+            !newMeal.setAttributeValue("collection_time", collection_time.Value) ||
+            !newMeal.setAttributeValue("number_of_portions_avaliable", number_of_portions_avaliable.Value)
+            )
+        {
+            Errors.InnerText = "Back end error! Code #6652";
+            return;
+        }
+        
 
         //validation
         string inputValidationErrors = backEnd._inputValiddation.validateMeal(newMeal);

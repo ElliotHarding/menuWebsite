@@ -31,8 +31,8 @@ public class User : TableAttributeList
         this.m_tableAttributes.Add(new TableAttribute("contact_email"));
         this.m_tableAttributes.Add(new TableAttribute("contact_phone"));
         this.m_tableAttributes.Add(new TableAttribute("rating"));
-        //this.m_tableAttributes.Add(new TableAttribute("picture_id"));
-        //this.m_tableAttributes.Add(new TableAttribute("is_admin"));
+        this.m_tableAttributes.Add(new TableAttribute("is_admin"));
+        this.m_tableAttributes.Add(new TableAttribute("picture_id"));
 
         m_tableName = "[User]";
     }

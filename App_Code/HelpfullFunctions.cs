@@ -13,7 +13,6 @@ public class HelpfullFunctions
     //Sends text to a validated email
     public bool sendEmail(string email, string subject, string[] body)
     {
-        //todo test
         return true;
 
         ////todo get sender email (should be like company email)
@@ -52,11 +51,19 @@ public class HelpfullFunctions
 
     public bool sendAccountResetEmail(string email)
     {
-        User user = new User();
+        if (email == null) return false;
 
         //todo get user account acociated with email
-        //generate reset email
-        //send to user
+        User user = new User();
+        try
+        {
+            user = new Storage().getListOfUsers("SELECT * FROM USER WHERE contact_email = '" + email + "';")[0];
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+      
 
         return sendEmail(user.getAttribute("email"), "Verify email", generateRestEmailText(user));
     }

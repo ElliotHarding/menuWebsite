@@ -30,15 +30,8 @@ public partial class Aspx_ViewChef : System.Web.UI.Page
             return;
         }
 
-        //populate HTML controls with chef data
-        //foreach (TableAttribute attribute in chefToDisplay.GetTableAttributes())
-        //{
-
-        //}
-
-        attribute1.Value = chefToDisplay.getAttribute("name");
-        attribute2.Value = chefToDisplay.getAttribute("rating" + "/5");
-        attribute3.Value = chefToDisplay.getAttribute("contact_email");
+        name.InnerText = chefToDisplay.getAttribute("name");
+        rating.Text = chefToDisplay.getAttribute("rating") + "/5";
 
         ChefImage.ImageUrl = chefToDisplay.getAttribute("picture_id");
 

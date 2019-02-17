@@ -2,16 +2,13 @@
 
 <asp:Content ContentPlaceHolderID="Main_Content_Placeholder" Runat="Server">
 
-    <p class="generic_title">Meal Name will go here</p>
+    <asp:Label ID="meal_name" runat="server"></asp:Label>
 
-    <p>TODO: get the attributes of a chef and display them here</p>
+    <a>Number of portions</a>
+    <asp:Label ID="num_portions_ordered" runat="server"></asp:Label>
 
-    <a>attribute1</a>
-    <input id="attribute1" type="text" runat="server"/>
-    <a>attribute2</a>
-    <input id="attribute2" type="text" runat="server"/>
-    <a>attribute3</a>
-    <input id="attribute3" type="text" runat="server"/>
+    <a>Active?</a>
+    <asp:Label ID="active" runat="server"></asp:Label>
         
     <p id="ErrorDisplay" class="generic_error_message" runat="server"></p>
 

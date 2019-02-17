@@ -41,14 +41,11 @@ public class Storage
 
     public bool isUserAdmin(string currentUserID)
     {
-        return true;
-        //todo when is_admin exists uncomment this
-        /*
         if (currentUserID == null || currentUserID == "")
             return false;
 
         User user = getUserById(currentUserID);
-        return (user.getAttribute("is_admin") == "true"); */
+        return (user.getAttribute("is_admin") == "true");
     }
 
     public List<Meal> getListOfMeals(string selectCommand = "NO COMMAND RETURNS ALL ELEMENTS")
@@ -264,6 +261,16 @@ public class Storage
         if(orders.Count > 0)
         {
             return (orders.Count + 10).ToString();
+        }
+        return "0";
+    }
+
+    public string generateUniqueMealID()
+    {
+        List<Meal> meals = getListOfMeals();
+        if (meals.Count > 0)
+        {
+            return (meals.Count + 10).ToString();
         }
         return "0";
     }

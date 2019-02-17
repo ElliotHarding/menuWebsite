@@ -15,8 +15,7 @@ public partial class Aspx_ForgotPassword : System.Web.UI.Page
     //Function called if reset email is sent correctly
     private void emailSent()
     {
-        //todo
-        //perhaps change 'send' button text to 're-send'
+        Successes.InnerText = "Sent!";
     }
 
     protected void sendRestLink(object sender, EventArgs e)

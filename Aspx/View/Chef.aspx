@@ -3,18 +3,12 @@
 
 <asp:Content ContentPlaceHolderID="Main_Content_Placeholder" Runat="Server">
 
-    <p>TODO: get the attributes of a chef and display them here</p>
+    <h2 ID="name" runat="server"></h2>
 
     <asp:Image ID="ChefImage" runat="server" />
-
     <p id="Errors" runat="server"></p>
 
-    <a>attribute1</a>
-    <input id="attribute1" type="text" runat="server"/>
-    <a>attribute2</a>
-    <input id="attribute2" type="text" runat="server"/>
-    <a>attribute3</a>
-    <input id="attribute3" type="text" runat="server"/>
+    <asp:Label ID="rating" runat="server"></asp:Label>
 
     <br />
     <br />
@@ -23,7 +17,6 @@
     <!-- Script manager to handle populating our custom controls into lists -->
     <asp:ScriptManager runat="server"></asp:ScriptManager>
 
-    <p>Filter results when searching meals that chef owns</p>
     <input ID="SearchBox" type="text" placeholder="Search meals..." runat="server"/>
     <br />
 
