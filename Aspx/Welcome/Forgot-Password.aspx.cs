@@ -8,8 +8,11 @@ public partial class Aspx_ForgotPassword : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Hide navigation bar options because on LoginPage
-        Master.FindControl("navigationbar").Visible = false;
+        //Hide navigation bar options because not logged in
+        Master.FindControl("navBarHomeButton").Visible = false;
+        Master.FindControl("navBarEatButton").Visible = false;
+        Master.FindControl("navBarAccountButton").Visible = false;
+        Master.FindControl("navBarLoginPageButton").Visible = true;
     }
 
     //Function called if reset email is sent correctly

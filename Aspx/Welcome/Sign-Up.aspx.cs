@@ -10,8 +10,11 @@ public partial class Aspx_SignUp : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Hide navigation bar options because on sign up
-        Master.FindControl("navigationbar").Visible = false;
+        //Hide navigation bar options because not logged in
+        Master.FindControl("navBarHomeButton").Visible = false;
+        Master.FindControl("navBarEatButton").Visible = false;
+        Master.FindControl("navBarAccountButton").Visible = false;
+        Master.FindControl("navBarLoginPageButton").Visible = true;
     }
 
     protected void signUpButtonClicked(object sender, EventArgs e)

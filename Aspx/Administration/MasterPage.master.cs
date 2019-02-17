@@ -20,4 +20,10 @@ public partial class Aspx_MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("../Navigation/Account.aspx");
     }
+
+    
+    protected void LoginPage_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("../Welcome/Login.aspx");
+    }
 }

@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="~/css/styles1.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
             <style>
-                #navBarButton1{
+                #navBarHomeButton{
                     border:0;
                     width: 32%;
                     color:white;                    
@@ -18,7 +18,7 @@
                     font-size: var(--font-biggest);
                 }
 
-                #navBarButton2{
+                #navBarEatButton{
                     border:0;
                     width:32%;
                     color:white;                    
@@ -29,7 +29,18 @@
                     font-size: var(--font-biggest);
                 }
 
-                #navBarButton3{
+                #navBarAccountButton{
+                    border:0;
+                    width: 32%;
+                    color:white;                    
+                    text-align: center;
+                    display: inline-block;
+                    text-decoration: none;   
+                    background-color: #333;
+                    font-size: var(--font-biggest);
+                }
+
+                 #navBarLoginPageButton{
                     border:0;
                     width: 32%;
                     color:white;                    
@@ -48,10 +59,12 @@
             <!-- This navigation bar appears by default on every page (can be disabled for specifc pages) -->
             <div runat="server" id="navigationbar" style="text-align:center;background-color: #333; border-radius:6px;">
                 
-                <asp:Button runat="server" ID="navBarButton1" Text="Home" OnClick="Home_Click" />
-                <asp:Button runat="server" ID="navBarButton2" Text="Eat" OnClick="Eat_Click" />
-                <asp:Button runat="server" ID="navBarButton3" Text="Account" OnClick="Account_Click" />
-            
+                <asp:Button runat="server" ID="navBarHomeButton" Text="Home" OnClick="Home_Click" />
+                <asp:Button runat="server" ID="navBarEatButton" Text="Eat" OnClick="Eat_Click" />
+                <asp:Button runat="server" ID="navBarAccountButton" Text="Account" OnClick="Account_Click" />
+
+                <asp:Button runat="server" ID="navBarLoginPageButton" Text="Login Page" OnClick="LoginPage_Click" Visible="false" />
+
             </div>              
 
             <asp:ContentPlaceHolder id="Main_Content_Placeholder" runat="server">
